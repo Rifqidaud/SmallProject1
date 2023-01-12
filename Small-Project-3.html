@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="./font-awesome/css/font-awesome.min.css">
+
+        <style>
+            *{
+                box-sizing: border-box;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .col-12{
+                width: 100%;
+            }
+            .col-1{
+                width: 8.3%;
+            }
+            .col-2{
+                width: 16.66%;
+            }
+            .col-3{
+                width: 25%;
+            }
+            .col-4{
+                width: 33.3%;
+            }
+            .col-5{
+                width: 41,67%;
+            }
+            .col-6{
+                width: 50%;
+            }
+            .col-7{
+                width: 58.3%;
+            }
+            .col-8{
+                width: 66.66%;
+            }
+            .col-9{
+                width: 75%;
+            }
+            .col-10{
+                width: 83.3%;
+            }
+            .col-11{
+                width: 91,67%;
+            }
+            .col-12{
+                width: 100%;
+            }
+            .float-left{
+                float: left;
+            }
+            .float-right{
+                float:right;
+            }
+            .text-align-center{
+                text-align: center;
+            }
+            .col-offset-9{
+                width: 35%;
+            }
+            .col-offset-5{
+                width: 40%;
+            }
+            .text-right{
+                text-align: right;
+            }
+            .footer{
+                margin-top: 50px;
+                padding-bottom: 50px;
+            }
+            .text-center{
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="col-12">
+            <div style="background-color:#ebebeb" class="col-12 float-left" >
+                <div class="col-8 float-left">
+                    <div style="font-size:26px;padding-top:5px;padding-right: 5px;margin: 5px;">
+                    <h1>Your Shop Name</h1>
+                    </div> 
+               </div>
+                <div class="col-2 float-left">
+                    <div style="color:#E7F0F2;background-color:#E7F0F2;top:59px;right:20px;">
+                    <h1>product</h1>
+                    </div>
+                    <button style="border:none;background-color: white; cursor:pointer;margin:5px;"><i class="fa fa-search"></i>
+                           <div style="margin:20px;padding:10px">
+                            </div>
+                 </button>
+                           
+                </div>
+                <div class="col-2 float-right">
+                    <button style="border:none;background-color: white; cursor:pointer;margin:5px;"><i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-12">
+            <div class="col-2 float-left" style="border-left:1px solid black"></div>
+               <div style="position:relative;">
+                      FEATURED <br>
+                      <br>
+                      category 1 <br>
+                       <br>
+                      category 2 <br>
+                      <br>
+                      category 3 <br>
+                      <br>
+                      categoty 4 <br>
+                      <br>
+                      category 5 <br>
+          
+                </div>
+           </div>
+           <div id ="card-container"class="col-8 float-left">
+              
+        </div>
+           <div class="col-2 float-left">
+            <div style="background-color: #E7F0F24D; border-right: 1px solid rgb(49, 47, 47);">
+             ALL <br>
+             Filter 1 <br>
+             Filter 2 <br>
+             Filter 3 <br>
+             Filter 4 <br>
+             Filter 5 <br>
+         </div>
+         </div>
+       <div class="col-2 float-left">
+            <input type="checkbox" id="Shirt" name="category" value="Shirt" onClick="filter('Shirt')">
+            <label>Shirt</label><br>
+            <input type="checkbox" id="Jeans" name="category" value="Jeans" onClick="filter('Jeans')">
+            <label>Jeans</label><br>
+            <input type="checkbox" id="Shoes" name="category" value="Shoes" onClick="filter('Shoes')">
+            <label>Shoes</label><br>
+      </div>
+          <div class="footer">
+             <div class="col-12 float-left text-center">
+                 <img src="C:\Users\ASUS\Documents\Muhammad Rifqi Daud_Tugas Pemograman\Muhammad Rifqi Daud_Small Project\Group.jpg" style="width:20px;float:center;color:black;text-align: center;margin-top: 20px;">
+             </div>
+         </div>
+    </body>
+    <script>
+        var array = [
+          {
+                name:'Product 1',
+                image:'https://media.istockphoto.com/photos/follow-your-style-stylish-guy-abstract-background-handsome-man-in-picture-id1254567458?s=612x612',
+                category:'Shirt'
+          },
+          {
+                name:'Product 2',
+                image:'https://media.istockphoto.com/photos/follow-your-style-stylish-guy-abstract-background-handsome-man-in-picture-id1254567458?s=612x612',
+                category:'Shirt'
+          },
+          {
+                name:'Product 3',
+                image:'https://media.istockphoto.com/photos/follow-your-style-stylish-guy-abstract-background-handsome-man-in-picture-id1254567458?s=612x612',
+                category:'Jeans'
+          },
+          {
+                name:'Product 4',
+                image:'https://media.istockphoto.com/photos/follow-your-style-stylish-guy-abstract-background-handsome-man-in-picture-id1254567458?s=612x612',
+                category:'Jeans'
+          },
+          {
+                name:'Product 5',
+                image:'https://media.istockphoto.com/photos/follow-your-style-stylish-guy-abstract-background-handsome-man-in-picture-id1254567458?s=612x612',
+                category:'Shoes'
+          },
+          {
+                name:'Product 6',
+                image:'https://media.istockphoto.com/photos/follow-your-style-stylish-guy-abstract-background-handsome-man-in-picture-id1254567458?s=612x612',
+                category:'Shoes'
+          },
+        ];
+        function render(products){
+            console.log(products);
+            var cardContainer = document.getElementById("card-container");
+            cardContainer.innerHTML="";
+            for(let i = 0; i < products.length; i++){
+                var card = document.createElement("div");
+                card.setAttribute("class","card-product col-4 float-left");
+                var image = document.createElement("img");
+                image.setAttribute("src",products[i].image);
+                image.setAttribute("style","width:200px");
+                var name = document.createElement("h3");
+                var text = document.createTextNode(products[i].name);
+                name.appendChild(text);
+                var category = document.createElement("h5");
+                var categoryText = document.createTextNode(products[i].category);
+                category.appendChild(categoryText)
+                card.appendChild(image);
+                card.appendChild(name);
+                card.appendChild(category);
+              
+                cardContainer.appendChild(card)
+              }
+        }
+        render(array);
+        var arrayFilter =[];
+        function filter(keyFilter){
+            var checkbox = document.getElementById(keyFilter);
+            console.log(checkbox.checked);
+            console.log(keyFilter);
+            if(checkbox.checked == true){
+                arrayFilter.push(keyFilter);
+
+                var filterProduct = array.filter(function(product){
+                    return arrayFilter.indexOf(product.category) !== -1;
+                });
+                render(filterProduct);
+            }else{
+                var index = arrayFilter.indexOf(keyFilter);
+                if (index !== -1) {
+                    arrayFilter.splice(index, 1);
+                }
+                var filterProduct = array.filter(function(product){
+                    return arrayFilter.indexOf(product.category) !== -1;
+                });
+                render(filterProduct)
+            }
+            if(arrayFilter.length < 1){
+                render(array);
+            }
+        
+
+
+        }
+    </script>
+</html>
